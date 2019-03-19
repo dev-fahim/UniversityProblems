@@ -95,10 +95,6 @@ int main()
     printf("Let me calculate!!! It's a 'Piece of Cake'!!! \n");
     printf("\n");
     printf("\t %s is in Base-2: %s\n", str, fromDeci(res, 2, inputNum));
-    printf("\t %s is in Base-10: %s\n", str, fromDeci(res, 10, inputNum));
-    printf("\t %s is in Base-8: %s\n", str, fromDeci(res, 8, inputNum));
-    printf("\t %s is in Base-16: %s\n", str, fromDeci(res, 16, inputNum));
-    printf("\t %s is in Base-7: %s\n", str, fromDeci(res, 7, inputNum));
     printf("\n");
     printf("Thank you!!!\n");
     return 0; 
