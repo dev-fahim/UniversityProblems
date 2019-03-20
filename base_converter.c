@@ -27,7 +27,7 @@ int toDeci(char *str, int base)
         // less than number's base 
         if (val(str[i]) >= base) 
         { 
-           printf("Invalid Number"); 
+           printf("Invalid Number \n"); 
            return -1; 
         } 
   
@@ -55,9 +55,9 @@ void strev(char *str)
     int i; 
     for (i = 0; i < len/2; i++) 
     { 
-        char temp = str[i]; 
+        char temp = str[i]; /* should be temp */
         str[i] = str[len-i-1]; 
-        str[len-i-1] = temp; 
+        str[len-i-1] = temp; // should be temp 
     } 
 } 
   
@@ -80,22 +80,28 @@ char* fromDeci(char res[], int base, int inputNum)
     strev(res); 
   
     return res; 
-} 
+}
+
+char* base_converter(char number[100], int number_base, int converted_base){
+    int decimal_number = toDeci(number, number_base);
+    char res[100];
+    return fromDeci(res, converted_base, decimal_number);
+}
   
 // Driver program 
 int main() 
 { 
-    int inputNum, base = 6; 
-    char res[100]; 
-    char str[100];  
-    printf("Please enter desired input (in Base6): ");
-    scanf("%s", str);
-    inputNum = toDeci(str, base);
-    printf("\n");
-    printf("Let me calculate!!! It's a 'Piece of Cake'!!! \n");
-    printf("\n");
-    printf("\t %s is in Base-2: %s\n", str, fromDeci(res, 2, inputNum));
-    printf("\n");
-    printf("Thank you!!!\n");
+    int base, converted_base;
+    char number[100];
+
+    printf("\nEnter inputed number: ");
+    scanf("%s", number);
+    printf("Inputed number's base: ");
+    scanf("%d", &base);
+    printf("Converted number's base: ");
+    scanf("%d", &converted_base);
+
+    printf("\n%s (base %d) => %s (base %d) \n\n", number, base, base_converter(number, base, converted_base), converted_base);
+
     return 0; 
 }
