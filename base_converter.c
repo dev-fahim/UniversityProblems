@@ -27,7 +27,7 @@ int toDeci(char *str, int base)
         // less than number's base 
         if (val(str[i]) >= base) 
         { 
-           printf("Invalid Number \n"); 
+           printf("\nInvalid Number \n"); 
            return -1; 
         } 
   
